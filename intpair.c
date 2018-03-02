@@ -18,17 +18,17 @@
 /* declarations for dynamic loading */
 PG_MODULE_MAGIC;
 
-PG_FUNCTION_INFO_V1(int64pair_in);
-PG_FUNCTION_INFO_V1(int64pair_out);
-PG_FUNCTION_INFO_V1(int64pair_make);
-PG_FUNCTION_INFO_V1(int64pair_lt);
-PG_FUNCTION_INFO_V1(int64pair_lte);
-PG_FUNCTION_INFO_V1(int64pair_neq);
-PG_FUNCTION_INFO_V1(int64pair_eq);
-PG_FUNCTION_INFO_V1(int64pair_gt);
-PG_FUNCTION_INFO_V1(int64pair_gte);
-PG_FUNCTION_INFO_V1(int64pair_cmp);
-PG_FUNCTION_INFO_V1(int64pair_hash);
+PG_FUNCTION_INFO_V1(app_user_id_in);
+PG_FUNCTION_INFO_V1(app_user_id_out);
+PG_FUNCTION_INFO_V1(app_user_id_make);
+PG_FUNCTION_INFO_V1(app_user_id_lt);
+PG_FUNCTION_INFO_V1(app_user_id_lte);
+PG_FUNCTION_INFO_V1(app_user_id_neq);
+PG_FUNCTION_INFO_V1(app_user_id_eq);
+PG_FUNCTION_INFO_V1(app_user_id_gt);
+PG_FUNCTION_INFO_V1(app_user_id_gte);
+PG_FUNCTION_INFO_V1(app_user_id_cmp);
+PG_FUNCTION_INFO_V1(app_user_id_hash);
 
 typedef struct
 {
@@ -43,7 +43,7 @@ typedef struct
 #define PG_RETURN_INT64PAIR(x)	 return Int64PairGetDatum(x)
 
 Datum
-int64pair_in(PG_FUNCTION_ARGS)
+app_user_id_in(PG_FUNCTION_ARGS)
 {
 	char *str = PG_GETARG_CSTRING(0);
 	Int64Pair *result = palloc0(sizeof(Int64Pair));
@@ -70,7 +70,7 @@ int64pair_in(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_out(PG_FUNCTION_ARGS)
+app_user_id_out(PG_FUNCTION_ARGS)
 {
 	Int64Pair *p = PG_GETARG_INT64PAIR(0);
 	StringInfo result = makeStringInfo();
@@ -80,7 +80,7 @@ int64pair_out(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_make(PG_FUNCTION_ARGS)
+app_user_id_make(PG_FUNCTION_ARGS)
 {
 	Int64Pair *result = palloc0(sizeof(Int64Pair));
 	result->first = PG_GETARG_INT64(0);
@@ -89,7 +89,7 @@ int64pair_make(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_lt(PG_FUNCTION_ARGS)
+app_user_id_lt(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 	Int64Pair *b = PG_GETARG_INT64PAIR(1);
@@ -99,7 +99,7 @@ int64pair_lt(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_lte(PG_FUNCTION_ARGS)
+app_user_id_lte(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 	Int64Pair *b = PG_GETARG_INT64PAIR(1);
@@ -109,7 +109,7 @@ int64pair_lte(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_eq(PG_FUNCTION_ARGS)
+app_user_id_eq(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 	Int64Pair *b = PG_GETARG_INT64PAIR(1);
@@ -118,7 +118,7 @@ int64pair_eq(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_neq(PG_FUNCTION_ARGS)
+app_user_id_neq(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 	Int64Pair *b = PG_GETARG_INT64PAIR(1);
@@ -127,7 +127,7 @@ int64pair_neq(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_gt(PG_FUNCTION_ARGS)
+app_user_id_gt(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 	Int64Pair *b = PG_GETARG_INT64PAIR(1);
@@ -137,7 +137,7 @@ int64pair_gt(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_gte(PG_FUNCTION_ARGS)
+app_user_id_gte(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 	Int64Pair *b = PG_GETARG_INT64PAIR(1);
@@ -147,7 +147,7 @@ int64pair_gte(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_cmp(PG_FUNCTION_ARGS)
+app_user_id_cmp(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 	Int64Pair *b = PG_GETARG_INT64PAIR(1);
@@ -160,7 +160,7 @@ int64pair_cmp(PG_FUNCTION_ARGS)
 }
 
 Datum
-int64pair_hash(PG_FUNCTION_ARGS)
+app_user_id_hash(PG_FUNCTION_ARGS)
 {
 	Int64Pair *a = PG_GETARG_INT64PAIR(0);
 
